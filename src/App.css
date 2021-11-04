@@ -1,21 +1,26 @@
 .App {
-  text-align: center;
-}
+  display: grid;
+  grid-template: "header header" 15vh
+                 "navBar main" 1fr
+                 "sales sales" 0.2fr
+                 "footer footer" 0.3fr / 250px 1fr;
+};
+
 
 .App-logo {
-  height: 40vmin;
+  height: 10vh;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 2s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #8b8b8b;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,19 +34,15 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  0% {
+    transform: translateY(0px);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
-.navBarButton {
-  font-size: 33px;
-  font-family: serif;
-  font-weight: 300;
-  width: max-content;
-  border: 1px solid purple;
-  border-radius: 11px;
-}
+

@@ -1,0 +1,37 @@
+.NavBar {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    width: max-content;
+    padding: 0 30px 0 20px;
+    background-color: rgb(235, 235, 235);
+  }
+  
+  #shopName {
+    margin: 0;
+  }
+  
+  #categoriesList {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .NavBar li {
+    list-style: none;
+    margin: 10px 0;
+  }
+  
+  .NavBarButton {
+    color: rebeccapurple;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    width: 200px;
+    padding: 2px 6px;
+    border: solid 2px rebeccapurple;
+    border-radius: 33px;
+    box-shadow: 5px 5px 0 rebeccapurple;
+    cursor: pointer;
+  }
