@@ -1,22 +1,22 @@
-//este file es un modulo que contiene un bloque de codigo jsx. este bloque de codigo es el componente que exportaremos a la funcion App() del file App.js para que se renderice y se incorpore al DOM, y asi se visualice.
-
-/* que contenga:
-Brand (título/nombre de la tienda)
-Un listado de categorías clickeables
-Incorpora alguna librería de estilos con bootstrap/materialize u otro de tu preferencia (opcional). */
-
+import { Link } from 'react-router-dom';
+import { categoriesLinks } from '../../helpers/categoriesLinks';
+import './NavBar.css';
 
 const NavBar = () => {
     return  (
-        <div className="NavBar">
+        <div className="navBar">
             <h1 id="shopName">shop name</h1>
 
-            <ul id="categoriesList">
-                <li><button className="NavBarButton">productos</button></li>
-                <li><button className="NavBarButton">ofertas</button></li>
-                <li><button className="NavBarButton">carrito</button></li>
-                <li><button className="NavBarButton">info</button></li>
-                <li><button className="NavBarButton">contacto</button></li>
+            <ul>
+                <Link to="/products"><li className="navBarLink">productos</li></Link>
+                <li>
+                    <ul>
+                        {categoriesLinks()}
+                    </ul>
+                </li>
+                <Link to="/sale"><li className="navBarLink">ofertas</li></Link>
+                <Link to="/info"><li className="navBarLink">info</li></Link>
+                <Link to="/contact"><li className="navBarLink">contacto</li></Link>
             </ul>
         </div>
     );

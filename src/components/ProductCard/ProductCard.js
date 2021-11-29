@@ -1,3 +1,5 @@
+import './ProductCard.css';
+
 
 const ProductCard = ( props ) => { //como parámetro este componente va a recibir las url's relativas de las distintas imágenes de productos, y strings que sean los nombres y precios correspondientes a cada imagen-produto. estos parámetros son los "props" (objeto) -de propiedades-.
 

@@ -1,0 +1,24 @@
+.App-header {
+    grid-area: header;
+    background-color: #8b8b8b;
+    min-height: 15vh;
+    display: flex;
+    flex-direction: row nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+#App-logo {
+    width: 110px;
+    height: 110px;
+    pointer-events: none;
+}
+  
+#logoContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}

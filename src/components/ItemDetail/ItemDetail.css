@@ -1,0 +1,25 @@
+.itemDetailBox {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: content;
+    padding: 30px 55px;
+
+}
+
+.itemData {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+
+.itemDescription {
+    border-top: solid 1px black;
+}
+
+.buyAddBtns {
+    font-size: 16px;
+    margin-bottom: 30px;
+}

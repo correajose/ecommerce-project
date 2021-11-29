@@ -1,0 +1,4 @@
+.itemListContainer {
+    grid-area: main;
+    padding: 0 35px;
+}
