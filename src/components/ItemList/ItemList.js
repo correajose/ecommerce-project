@@ -2,15 +2,17 @@ import Item from '../Item/Item';
 import stock from '../../data/stock';
 import { useEffect, useState } from 'react';
 import { getData } from '../../helpers/getData';
-// import loaderGif from "../../img/loader.gif";
+import Loader from '../Loader/Loader';
 
 const ItemList = ( {category} ) => {
 
-    const [productsData, setProductsData] = useState("cargando productos...");
-    // const [loader, setLoader] = useState([true]);
+    
+    const [productsData, setProductsData] = useState();
+    const [loading, setLoading] = useState([true]);
     const [filteredStock, setFilteredStock] = useState([]);
      
     useEffect ( () => {
+        setLoading(true);
         getData(stock)
             .then( (resp) => {
                 setFilteredStock(category === "null" ? resp : resp.filter(p => p.category === category));
@@ -19,12 +21,15 @@ const ItemList = ( {category} ) => {
             .catch( (err) => {
                console.log(err); 
             })
-            /* .finally( () => {
-                setLoader(false);
-            }) */
+            .finally( () => {
+                setLoading(false);
+            })
     }, [filteredStock, category]);
 
-    return productsData;
+    return (
+        loading ?
+        <Loader/>
+        : productsData)
 };
 
 export default ItemList;

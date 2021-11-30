@@ -1,23 +1,29 @@
-import { useEffect, useState } from "react";
 import "./ItemCount.css";
 
-const QuantitySelector = ( { remainingQtty } ) => {
+const ItemCount = ( { maxQtty, setAmount, amount } ) => {
 
-    const [qtty, setQtty] = useState();
+    /* useEffect( () => {
+        setAmount(maxQtty > 0 ? 1 : 0);
+    }, [amount] ); */
 
-    useEffect( () => {
-        setQtty(remainingQtty > 0 ? 1 : 0);
-    }, [remainingQtty] );
+    const handleSub = () => {
+        amount > 1 && setAmount(amount-1)
+    };
+
+    const handleSum = () => {
+        amount < maxQtty && setAmount(amount+1)
+    };
 
     return (
         <span className="itemCountBox">
-            <button onClick={() => qtty > 1 && setQtty(qtty-1)} className="btn">-</button>
-            <p>{qtty}</p>
-            <button onClick={() => qtty < remainingQtty && setQtty(qtty+1)}>+</button>
-            {qtty === 0 && <p className="sinStockLabel">{qtty === 0 && "sin stock"}</p>}
+            <button onClick={handleSub} className="btn"> - </button>
+            <p>{amount}</p>
+            <button onClick={handleSum}> + </button>
+            {maxQtty === 0 && <p className="sinStockLabel">sin stock</p>} {//tampoco funciona este condicional para mostrar una etiqueta "sin stock" cuando no lo haya
+            }
         </span>
     )
 
 };
 
-export default QuantitySelector;
+export default ItemCount;

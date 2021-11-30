@@ -5,7 +5,7 @@ const ItemListContainer = ( {category} ) => {
 
     return(  
             <div className="itemListContainer">
-                <ItemList category={category} />
+                <ItemList category={category}/>
             </div>
     )
 }
