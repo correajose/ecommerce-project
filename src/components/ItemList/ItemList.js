@@ -1,11 +1,11 @@
 import Item from '../Item/Item';
 import stock from '../../data/stock';
 import { useEffect, useState } from 'react';
-import { getData } from '../../helpers/getData';
+import getData from '../../helpers/getData';
 import Loader from '../Loader/Loader';
 
-const ItemList = ( {category} ) => {
 
+const ItemList = ( {category} ) => {
     
     const [productsData, setProductsData] = useState();
     const [loading, setLoading] = useState([true]);
@@ -13,9 +13,10 @@ const ItemList = ( {category} ) => {
      
     useEffect ( () => {
         setLoading(true);
+
         getData(stock)
             .then( (resp) => {
-                setFilteredStock(category === "null" ? resp : resp.filter(p => p.category === category));
+                setFilteredStock(category === "none" ? resp : resp.filter(p => p.category === category));
                 setProductsData(filteredStock.map(p => <Item key={p.id} {...p}/>));
             })
             .catch( (err) => {
@@ -27,9 +28,10 @@ const ItemList = ( {category} ) => {
     }, [filteredStock, category]);
 
     return (
-        loading ?
-        <Loader/>
-        : productsData)
+            loading ?
+            <Loader/>
+            : productsData
+        )
 };
 
 export default ItemList;

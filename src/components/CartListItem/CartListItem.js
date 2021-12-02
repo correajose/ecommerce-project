@@ -1,24 +1,29 @@
-import { useEffect, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount.js";
 import trashCan from "../../img/trashCan.png";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "../../context/CartContext.js";
+import "./CartListItem.css";
 
-const CartListItem = ( {name, price, picURL, qtty, amountSelected} ) => {
+const CartListItem = ( { itemAdded } ) => {
 
-    const [itemLives, setItemLives] = useState(true);
+    const [amount, setAmount] = useState(itemAdded.addedQtty);
+    const { removeItem, cart } = useContext(CartContext);
 
     useEffect( () => {
-
-    }, [itemLives]);
+        cart[cart.findIndex(e => e.id === itemAdded.id)].addedQtty = amount;
+    }, [amount, cart, itemAdded.id])
 
     return (
-        <div>
-            <img src={picURL} alt={name}/>
-            <h4>{name}</h4>
-            {/* <p>cantidad: {amount}</p> */}
-            <p>precio: {price}</p>
-            {/* <p>total: {price*amount}</p> */}
-            <ItemCount remainingQtty={qtty}/>
-            <button onClick={ () => setItemLives(false) }>
+        <div className="addedItemBox">
+            <img className="itemPic" src={itemAdded.picURL} alt={itemAdded.name}/>
+            <span className="addedItemDetailsBox">
+                <h4>{itemAdded.name}</h4> <br/>
+                {/* <p>cantidad: {itemAdded.addedQtty}</p> <br/> */}
+                {/* <p>precio: ${itemAdded.price}</p> <br/> */}
+                <p>total-item: ${itemAdded.price*itemAdded.addedQtty}</p> <br/>
+                <ItemCount maxStock={itemAdded.qtty} amount={amount} setAmount={setAmount}/>
+            </span>
+            <button id="trashCanBtn" onClick={ () => removeItem(itemAdded.id)}>
                 <img src={trashCan} alt="trash-can-button"/>
             </button>
         </div>
