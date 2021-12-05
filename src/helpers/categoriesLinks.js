@@ -13,7 +13,7 @@ export const categoriesLinks = () => {
     return (
         
         categories.map(cat => {
-            return <Link to={"/products/category/"+cat}><li className="categoryLink">{cat}</li></Link>;
+            return <Link to={"/products/"+cat}><li className="categoryLink">{cat}</li></Link>;
         })
     )
 };

@@ -3,28 +3,32 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import stock from '../../data/stock';
 import getData from '../../helpers/getData';
 import Loader from '../Loader/Loader';
+import { useParams } from 'react-router';
 
-const ItemDetailContainer = ( {id} ) => {
+const ItemDetailContainer = () => {
 
-    const [prodShown, setProdShown] = useState({});
+    const [itemShown, setItemShown] = useState({});
     const [loading, setLoading] = useState([true]);
 
+    const { itemId } = useParams()
 
     useEffect( () => {
-        getData(stock[id-1])
+        setLoading(true);
+        
+        getData(stock[itemId-1])
         .then( (item) => {
-            setProdShown(item);
+            setItemShown(item);
         })
         .finally( () => {
             setLoading(false);
         });
 
-    }, [id]);
+    }, [itemId]);
 
     return (
             loading ?
             <Loader />
-            : <ItemDetail prodShown={prodShown} />
+            : <ItemDetail ItemShown={itemShown} />
         )
 }
 

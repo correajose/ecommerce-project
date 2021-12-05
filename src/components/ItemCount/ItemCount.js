@@ -12,10 +12,9 @@ const ItemCount = ( { maxStock, setAmount, amount } ) => {
 
     return (
         <span className="itemCountBox">
-            <button onClick={handleSub} className="btn"> - </button>
+            <button onClick={handleSub}> - </button>
             <p>{amount}</p>
             <button onClick={handleSum}> + </button>
-            {maxStock === 0 && <p className="sinStockLabel">sin stock</p>}
         </span>
     )
 

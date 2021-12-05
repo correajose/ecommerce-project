@@ -13,16 +13,18 @@ const CartView = () => {
         setCartList(cart.map(item => <CartListItem key={item.id} itemAdded={item}/>));
     }, [cart]);
     
+    
+
     return (
         
         <div className="cartView">
             {cart.length !== 0 && <button onClick={clear}>vaciar carrito</button>}
             {cartList}
-            {cart.length !== 0 && <button onClick={ () => {}}>finalizar compra</button>}
+            {cart.length !== 0 && <> <p>Total: ${}</p> <button onClick={ () => {}}>finalizar compra</button> </>}
             {cart.length === 0 &&
                 <div className="emptyCartBanner">
                     <h1>Tu carrito está vacío :'(</h1> <br/>
-                    <Link to="/products"><button onClick={ () => {}}>ir a productos</button></Link>
+                    <Link to="/products/all"><button>ir a productos</button></Link>
                 </div>}
         </div>
     )

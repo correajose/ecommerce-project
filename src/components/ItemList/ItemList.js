@@ -16,7 +16,9 @@ const ItemList = ( {category} ) => {
 
         getData(stock)
             .then( (resp) => {
-                setFilteredStock(category === "none" ? resp : resp.filter(p => p.category === category));
+                setFilteredStock(category === "all" ?
+                                    resp
+                                    : resp.filter(p => p.category === category));
                 setProductsData(filteredStock.map(p => <Item key={p.id} {...p}/>));
             })
             .catch( (err) => {

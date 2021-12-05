@@ -1,15 +1,8 @@
 import './App.css';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.js';
-import CartView from './components/CartView/CartView';
-import SalesView from './components/SalesView/SalesView';
-import InfoView from './components/InfoView/InfoView';
-import ContactView from './components/ContactView/ContactView';
-import ItemListContainer  from './components/ItemListContainer/ItemListContainer';
-import {BrowserRouter, Routes, Route, Navigate}  from 'react-router-dom';
-import { itemDetailRoutes } from './helpers/itemDetailRoutes';
-import { categoriesRoutes } from './helpers/categoriesRoutes';
-import "./context/CartContext.js";
+import AppRouter from './router/AppRouter';
+import { BrowserRouter }  from 'react-router-dom';
 import { CartContext } from './context/CartContext.js';
 import { useState } from 'react';
 
@@ -43,8 +36,8 @@ function App() {
   const isInCart = (item) => {
     let verif = false;
 
-    for (let i of cart) {
-      if(i.id === item.id) verif = true;
+    for (let items of cart) {
+      if(items.id === item.id) verif = true;
     }
 
     return verif;
@@ -60,20 +53,7 @@ function App() {
 
           <Header/>
           <NavBar/>
-
-          <Routes>
-
-            <Route path="/" element={<>Home</>} />
-            <Route path="/products" element={ <ItemListContainer category="none"/> } />
-            {categoriesRoutes()}
-            {itemDetailRoutes()}
-            <Route path="/sale" element={ <SalesView/> } />
-            <Route path="/cart" element={ <CartView/> } />
-            <Route path="/info" element={ <InfoView/> } />
-            <Route path="/contact" element={ <ContactView/> } />
-            <Route path="*" element={ <Navigate to="/" /> } />
-
-          </Routes>
+          <AppRouter/>
 
         </div>
 

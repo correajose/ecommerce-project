@@ -8,7 +8,7 @@ const NavBar = () => {
             <h1 id="shopName">shop name</h1>
 
             <ul>
-                <Link to="/products"><li className="navBarLink">productos</li></Link>
+                <Link to="/products/all"><li className="navBarLink">productos</li></Link>
                 <li>
                     <ul>
                         {categoriesLinks()}
