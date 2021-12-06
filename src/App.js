@@ -9,6 +9,7 @@ import { useState } from 'react';
 function App() {
 
   const [cart, setCart] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const addItem = (item, quantity) => {
 
@@ -46,7 +47,7 @@ function App() {
 
   return (
 
-    <CartContext.Provider value={{cart, addItem, removeItem, clear, isInCart}}>
+    <CartContext.Provider value={{cart, totalPrice, addItem, removeItem, clear, isInCart, setTotalPrice}}>
     
       <BrowserRouter>
         <div className="App">

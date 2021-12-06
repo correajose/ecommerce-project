@@ -7,20 +7,19 @@ import './CartView.css';
 const CartView = () => {
 
     const [cartList, setCartList] = useState();
-    const { cart, clear } = useContext(CartContext);
+    const { cart, clear, totalPrice, setTotalPrice } = useContext(CartContext);
 
     useEffect( () => {
-        setCartList(cart.map(item => <CartListItem key={item.id} itemAdded={item}/>));
+        setCartList(cart.map(item => <CartListItem key={item.id} itemAdded={item}/>));        
     }, [cart]);
-    
-    
+
 
     return (
         
         <div className="cartView">
             {cart.length !== 0 && <button onClick={clear}>vaciar carrito</button>}
             {cartList}
-            {cart.length !== 0 && <> <p>Total: ${}</p> <button onClick={ () => {}}>finalizar compra</button> </>}
+            {cart.length !== 0 && <> <p>Total: ${totalPrice}</p> <button onClick={ () => {}}>finalizar compra</button> </>}
             {cart.length === 0 &&
                 <div className="emptyCartBanner">
                     <h1>Tu carrito está vacío :'(</h1> <br/>

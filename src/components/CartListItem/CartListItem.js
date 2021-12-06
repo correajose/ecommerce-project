@@ -10,6 +10,7 @@ const CartListItem = ( { itemAdded } ) => {
     const { removeItem, cart, isInCart } = useContext(CartContext);
     
     isInCart(itemAdded) && (cart[cart.findIndex(e => e.id === itemAdded.id)].addedQtty = amount);
+    
 
     return (
         <div className="addedItemBox">
