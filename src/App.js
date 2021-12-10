@@ -24,7 +24,7 @@ function App() {
     console.log("se agregó un item al carrito")
   };
 
-  console.log(cart);
+  // console.log(cart);
 
   const removeItem = (itemId) => {
     setCart(cart.filter(item => item.id !== itemId));

@@ -1,33 +1,43 @@
 import Item from '../Item/Item';
-import stock from '../../data/stock';
+import { collection, getDocs } from 'firebase/firestore/lite';
+import { db } from '../../firebase/config';
 import { useEffect, useState } from 'react';
-import getData from '../../helpers/getData';
 import Loader from '../Loader/Loader';
-
 
 const ItemList = ( {category} ) => {
     
-    const [productsData, setProductsData] = useState();
+    const [productsData, setProductsData] = useState([]);
     const [loading, setLoading] = useState([true]);
     const [filteredStock, setFilteredStock] = useState([]);
      
     useEffect ( () => {
         setLoading(true);
 
-        getData(stock)
-            .then( (resp) => {
-                setFilteredStock(category === "all" ?
-                                    resp
-                                    : resp.filter(p => p.category === category));
-                setProductsData(filteredStock.map(p => <Item key={p.id} {...p}/>));
+        const productsCollection = collection(db, "products");
+
+        getDocs(productsCollection)
+            .then((resp) => {
+
+                const items = resp.docs.map(p => ({id: p.id, ...p.data()}));
+
+                setFilteredStock(category === "all"
+                            ? items
+                            : items.filter(p => p.category === category)
+                );
+
             })
             .catch( (err) => {
-               console.log(err); 
+                console.log(err);
             })
             .finally( () => {
                 setLoading(false);
-            })
-    }, [filteredStock, category]);
+            });
+
+    }, [category]);
+
+    useEffect( () => {
+        setProductsData(filteredStock.map(p => <Item key={p.id} {...p}/>));
+    }, [filteredStock])
 
     return (
             loading ?

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { categoriesLinks } from '../../helpers/categoriesLinks';
+import CategoriesLinks from '../CategoriesLinks/CategoriesLinks';
 import './NavBar.css';
 
 const NavBar = () => {
@@ -11,7 +11,7 @@ const NavBar = () => {
                 <Link to="/products/all"><li className="navBarLink">productos</li></Link>
                 <li>
                     <ul>
-                        {categoriesLinks()}
+                        <CategoriesLinks/>
                     </ul>
                 </li>
                 <Link to="/sale"><li className="navBarLink">ofertas</li></Link>

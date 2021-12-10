@@ -6,8 +6,6 @@ const ItemListContainer = ( ) => {
 
     let { catId } = useParams();
 
-    console.log(catId)
-
     return(  
             <div className="itemListContainer">
                 <ItemList category={catId}/>

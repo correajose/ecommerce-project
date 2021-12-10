@@ -11,7 +11,7 @@ const AppRouter = () => {
     const routes = useRoutes([
         { path: "/", element: <>Home</>},
         { path: "/products/:catId", element: <ItemListContainer/> },
-        { path: "/products/:catId/details/item-:itemId", element: <ItemDetailContainer/> },
+        { path: "/products/:catId/details/item/:itemId", element: <ItemDetailContainer/> },
         { path: "/sale", element: <SalesView/> },
         { path: "/cart", element: <CartView/> },
         { path: "/info", element: <InfoView/> },

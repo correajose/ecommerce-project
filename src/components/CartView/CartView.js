@@ -7,7 +7,7 @@ import './CartView.css';
 const CartView = () => {
 
     const [cartList, setCartList] = useState();
-    const { cart, clear, totalPrice, setTotalPrice } = useContext(CartContext);
+    const { cart, clear, totalPrice, /* setTotalPrice */ } = useContext(CartContext);
 
     useEffect( () => {
         setCartList(cart.map(item => <CartListItem key={item.id} itemAdded={item}/>));        
