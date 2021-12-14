@@ -22,3 +22,7 @@
     box-shadow: 2px 2px 0 rgb(12, 71, 197);
     cursor: pointer;
 }
+
+/* .itemCardButton:active {
+    transform: translateY(2px);
+  } */

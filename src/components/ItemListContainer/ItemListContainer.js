@@ -1,14 +1,13 @@
-import { useParams } from 'react-router';
 import ItemList from '../ItemList/ItemList';
 import "./ItemListContainer.css"
 
-const ItemListContainer = ( ) => {
+const ItemListContainer = () => {
 
-    let { catId } = useParams();
+    
 
     return(  
             <div className="itemListContainer">
-                <ItemList category={catId}/>
+                <ItemList/>
             </div>
     )
 }

@@ -10,7 +10,7 @@ const NavBar = () => {
             <ul>
                 <Link to="/products/all"><li className="navBarLink">productos</li></Link>
                 <li>
-                    <ul>
+                    <ul className="categoryLinks">
                         <CategoriesLinks/>
                     </ul>
                 </li>

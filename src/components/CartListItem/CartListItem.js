@@ -1,16 +1,19 @@
 import ItemCount from "../ItemCount/ItemCount.js";
 import trashCan from "../../img/trashCan.png";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/CartContext.js";
 import "./CartListItem.css";
 
 const CartListItem = ( { itemAdded } ) => {
 
     const [amount, setAmount] = useState(itemAdded.addedQtty);
-    const { removeItem, cart, isInCart } = useContext(CartContext);
+    const { removeItem, cart, isInCart, computeTotalPrice } = useContext(CartContext);
     
     isInCart(itemAdded) && (cart[cart.findIndex(e => e.id === itemAdded.id)].addedQtty = amount);
     
+    useEffect( () => {
+        computeTotalPrice();
+    }, [itemAdded.addedQtty, computeTotalPrice]);
 
     return (
         <div className="addedItemBox">

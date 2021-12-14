@@ -2,6 +2,26 @@
     grid-area: main;
 }
 
+.clearCart {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.cartList {
+    margin: 15px 0;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+.endPurchase {
+    margin-left: 10px;
+}
+
+#totalPrice {
+    margin: 0 10px;
+    font-weight: 500;
+}
+
 .emptyCartBanner {
     width: 100%;
     height: 100%;

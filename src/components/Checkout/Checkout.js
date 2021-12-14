@@ -1,22 +1,36 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { useState } from "react";
+import CheckOutComplete from "../CheckOutComplete/CheckOutComplete";
+import CheckOutForm from "../CheckOutForm/CheckOutForm";
+import "./CheckOut.css";
 
-const Checkout = () => {
+const CheckOut = () => {
 
-    const { cart, totalPrice} = useContext(CartContext);
+    const[order, setOrder] = useState({})
+    const[orderCreated, setOrderCreated] = useState(false);
 
-    const order = {
-        buyer: {
-            name: "papapa",
-            email: "papa@perfo.pa",
-            phoneNumber: 1452452
-        },
-        items: cart,
-        total: totalPrice
-    }
+    const[buyer, setBuyer] = useState({
+        name: "",
+        lastName: "",
+        idNumber: "",
+        emailAddress: "",
+        phoneNumber: ""
+    });
 
-    return order
+    const[address, setAddress] = useState({
+        addressStreet: "",
+        addressNumber: "",
+        floorDoor: "",
+        country: "",
+        state: "",
+        city: "",
+        postalCode: ""
+    });
 
-};
+    return (
+            orderCreated
+                        ? <CheckOutComplete order={order} />
+                        : <CheckOutForm buyer={buyer} setBuyer={setBuyer} address={address} setAddress={setAddress} setOrder={setOrder} orderCreated={orderCreated} setOrderCreated={setOrderCreated}/>
+    )
 
-export default Checkout;
+}
+export default CheckOut;

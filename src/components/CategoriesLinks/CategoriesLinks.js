@@ -9,25 +9,33 @@ const CategoriesLinks = () => {
     const [catFiltered, setCatFiltered] = useState([])
     const [categories, setCategories] = useState([]);
     const [requestCompleted, setRequestCompleted] = useState(false);
+
     const productsCollection = collection(db, "products")
     
-    useEffect(() => {
+    useEffect(() => { 
         getDocs(productsCollection)
-            .then( (resp) => {   
+        .then( (resp) => {   
                 setCatRepeated(resp.docs.map(p => p.data().category));
             })
             .finally( () => {
                 setRequestCompleted(true);
             });
             
-    }, []);   
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
         
     useEffect(() => {
-        setCatFiltered(catRepeated.filter( (ele, pos)=> catRepeated.indexOf(ele) === pos));
+        setCatFiltered(catRepeated.filter( (ele, pos) => catRepeated.indexOf(ele) === pos));
     }, [catRepeated]) 
     
-    useEffect(() => {        
-        setCategories(catFiltered.map(cat => <Link to={"/products/"+cat}><li className="categoryLink">{cat}</li></Link>));
+    useEffect(() => {
+        setCategories(catFiltered.map(cat => <li key={cat}>
+                                                <Link to={"/products/"+cat}>
+                                                    {"• "+cat} 
+                                                </Link>
+                                            </li>
+        ));
+
     }, [catFiltered])
 
     return requestCompleted ? categories : null

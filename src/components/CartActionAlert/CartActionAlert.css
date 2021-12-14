@@ -1,0 +1,37 @@
+.cartAlertTag {
+    width: 20%;
+    height: 35px;
+    font-size: 16px;
+    font-weight: 300;
+    position: absolute;
+    top: 48px;
+    left: 75%;
+    border-radius: 10px;
+    animation: fadein-fadeout ease-in-out 7s;
+}
+
+.shown {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadein-fadeout {
+    0% {color: rgba(34, 34, 34, 0);
+        background-color: rgba(255, 127, 80, 0); }
+    
+    15% {color: rgba(34, 34, 34, 0.73);
+        background-color: rgba(255, 127, 80, 0.73); }
+    
+    85% {color: rgba(34, 34, 34, 0.73);
+        background-color: rgba(255, 127, 80, 0.73); }
+    
+    100% {color: rgba(34, 34, 34, 0);
+        background-color: rgba(255, 127, 80, 0); }
+    
+}

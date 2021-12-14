@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Loader from '../Loader/Loader';
 import { useParams } from 'react-router';
-import { collection, getDocs } from 'firebase/firestore/lite';
+import { doc, getDoc } from 'firebase/firestore/lite';
 import { db } from '../../firebase/config';
 
 const ItemDetailContainer = () => {
@@ -15,15 +15,11 @@ const ItemDetailContainer = () => {
     useEffect( () => {
         setLoading(true);
         
-        const productsCollection = collection(db, "products");
+        const itemDoc = doc(db, "products", itemId);
 
-        getDocs(productsCollection)
-            .then( (resp) => {
-                console.log(resp.docs)
-                const item = resp.docs.filter(p => p.id === itemId);
-                setItemShown({...item[0].data()})
-                
-                
+        getDoc(itemDoc)
+        .then( (doc) => {
+                setItemShown({id: doc.id, ...doc.data()});
             })
             .catch( (err) => {
                 console.log(err);
@@ -33,9 +29,7 @@ const ItemDetailContainer = () => {
             });
 
     }, [itemId]);
-
-    console.log(itemShown)
-
+    
     return (
             loading ?
             <Loader />

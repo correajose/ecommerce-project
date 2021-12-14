@@ -4,9 +4,16 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    padding: 20px 30px;
-    border-top: solid 1px black;
-    border-bottom: solid 1px black;
+    padding: 10px 30px;
+    margin: 5px 0;
+}
+
+.addedItemDetailsBox {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 10px;
 }
 
 .itemPic {
@@ -15,14 +22,11 @@
     margin: 5px;
 }
 
-/* .addedItemDetailsBox {
-
-} */
-
 #trashCanBtn {
     background: none;
     border: none;
     box-shadow: none;
+    margin-top: 5px;
 }
 
 #trashCanBtn img {

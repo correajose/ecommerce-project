@@ -1,29 +1,29 @@
 import Item from '../Item/Item';
-import { collection, getDocs } from 'firebase/firestore/lite';
+import { collection, getDocs, query, where } from 'firebase/firestore/lite';
 import { db } from '../../firebase/config';
 import { useEffect, useState } from 'react';
 import Loader from '../Loader/Loader';
+import { useParams } from 'react-router-dom';
 
 const ItemList = ( {category} ) => {
+
+    let { catId } = useParams();
     
     const [productsData, setProductsData] = useState([]);
     const [loading, setLoading] = useState([true]);
-    const [filteredStock, setFilteredStock] = useState([]);
      
     useEffect ( () => {
         setLoading(true);
 
         const productsCollection = collection(db, "products");
-
-        getDocs(productsCollection)
+        const q = query(productsCollection, where("category", "==", catId));
+        
+        getDocs(catId === "all" ? productsCollection : q)
             .then((resp) => {
 
-                const items = resp.docs.map(p => ({id: p.id, ...p.data()}));
+                const items = resp.docs.map(doc => ({id: doc.id, ...doc.data()}));
 
-                setFilteredStock(category === "all"
-                            ? items
-                            : items.filter(p => p.category === category)
-                );
+                setProductsData(items.map(prod => <Item key={prod.id} {...prod}/>));
 
             })
             .catch( (err) => {
@@ -33,11 +33,7 @@ const ItemList = ( {category} ) => {
                 setLoading(false);
             });
 
-    }, [category]);
-
-    useEffect( () => {
-        setProductsData(filteredStock.map(p => <Item key={p.id} {...p}/>));
-    }, [filteredStock])
+    }, [catId]);
 
     return (
             loading ?
