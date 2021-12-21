@@ -3,7 +3,7 @@ import './SalesView.css';
 const SalesView = () => {
     return (
         <div className="salesView">
-            <h1>Ofertas!</h1>
+            <h1 className='hierarchy-1'>Ofertas!</h1>
         </div>
     )
 };

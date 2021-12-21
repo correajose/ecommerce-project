@@ -2,9 +2,10 @@
     grid-area: main;
 }
 
-.clearCart {
+.clear-cart {
     margin-top: 15px;
-    margin-left: 10px;
+    position: absolute;
+    right: 20px;
 }
 
 .cartList {

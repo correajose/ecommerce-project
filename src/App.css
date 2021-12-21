@@ -1,23 +1,132 @@
+/* defaults */
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Overpass', sans-serif;
 }
 
-a { text-decoration: none; }
+a {
+  cursor: pointer;
+  text-decoration: none; 
+  color: unset;
+}
+
+button {
+  cursor: pointer;
+}
+
+a:visited { color: unset; }
 
 .App {
   display: grid;
-  grid-template: "header header" 15vh
-                 "navBar main" 1fr
-                 "sales sales" 0.2fr
-                 "footer footer" 0.3fr / 250px 1fr;
+  grid-template: "header" 10rem
+                 "navBar" 3rem
+                 "main" 1fr
+                 "footer" 30rem;
   width: 100%;
-  height: min-content;
+  min-height: 100vh;
+  background-color: whitesmoke;
+  color: black;
 };
 
-.App-link {
-  color: #61dafb; 
+
+/* layout elements */
+
+.container-col {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout-element {
+  width: 100vw;
+  height: 100%;
+}
+
+/* buttons */
+
+.btn {
+  width: 100%;
+  height: max-content;
+  padding: .8rem 2rem;
+  border: none;
+  border-radius: .2rem;
+  background-color: var(--third-color);
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.btn-primary {
+  width: 100%;
+  height: max-content;
+  padding: .8rem 2rem;
+  border: none;
+  border-radius: .2rem;
+  background-color: var(--second-color);
+  font-size: 1.2rem;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.btn-outline {
+  width: 100%;
+  height: max-content;
+  padding: .8rem 2rem;
+  border: .2rem solid var(--second-color);
+  border-radius: .2rem;
+  background-color: none;
+  font-size: 1.2rem;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.btn-sqz {
+  width: max-content;
+  height: max-content;
 }
 
 
+/* text */
+
+.normal-text {
+  color: black;
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+
+.hierarchy-1 {
+  color: var(--second-color);
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+.hierarchy-2 {
+  color: var(--second-color);
+  font-size: 3.5rem;
+  font-weight: 500;
+}
+ 
+.hierarchy-3 {
+  color: black;
+  font-size: 2rem;
+  font-weight: 300;
+}
+ 
+.hierarchy-4 {
+  color: black;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+ 

@@ -6,7 +6,7 @@ const ItemListContainer = () => {
     
 
     return(  
-            <div className="itemListContainer">
+            <div className="itemListContainer container-row">
                 <ItemList/>
             </div>
     )

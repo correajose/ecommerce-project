@@ -1,0 +1,11 @@
+.contactForm {
+    padding: 3rem 5rem;
+}
+
+.contactForm input {
+    margin: .8rem 0;
+}
+
+.checkBox {
+    justify-content: flex-start;
+}

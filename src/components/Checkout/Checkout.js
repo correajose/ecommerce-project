@@ -13,6 +13,7 @@ const CheckOut = () => {
         lastName: "",
         idNumber: "",
         emailAddress: "",
+        emailConfirm: "",
         phoneNumber: ""
     });
 
@@ -27,9 +28,9 @@ const CheckOut = () => {
     });
 
     return (
-            orderCreated
-                        ? <CheckOutComplete order={order} />
-                        : <CheckOutForm buyer={buyer} setBuyer={setBuyer} address={address} setAddress={setAddress} setOrder={setOrder} orderCreated={orderCreated} setOrderCreated={setOrderCreated}/>
+            !orderCreated 
+                        ? <CheckOutForm buyer={buyer} setBuyer={setBuyer} address={address} setAddress={setAddress} setOrder={setOrder} orderCreated={orderCreated} setOrderCreated={setOrderCreated}/>
+                        : <CheckOutComplete order={order} />
     )
 
 }

@@ -1,24 +1,20 @@
-import { useContext, useEffect,  } from "react";
-import { CartContext } from "../../context/CartContext";
 import "./CartActionAlert.css"
 
+const CartActionAlert = ( ) => {
 
-const CartActionAlert = ( { action } ) => {
 
-    const { cartActionDisplay, setCartActionDisplay } = useContext(CartContext);
-
-    useEffect(() => {
+    /* useEffect(() => {
         setTimeout(() => {
-            setCartActionDisplay("hidden");
+            setDisplay("hidden");
         }, 7000);
         
     //eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, []); */
 
     return (
-        <div className={"cartAlertTag "+cartActionDisplay}>
-            <p> {action} </p>
-        </div>
+        {/* <div className={"cartAlertTag "+cartActionDisplay}>
+            {cartAction}
+        </div> */}
     )
 }
 

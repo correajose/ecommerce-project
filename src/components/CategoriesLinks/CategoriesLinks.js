@@ -2,6 +2,7 @@ import { collection, getDocs } from "firebase/firestore/lite";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../../firebase/config";
+import "./CategoriesLinks.css";
 
 const CategoriesLinks = () => {
 
@@ -31,7 +32,7 @@ const CategoriesLinks = () => {
     useEffect(() => {
         setCategories(catFiltered.map(cat => <li key={cat}>
                                                 <Link to={"/products/"+cat}>
-                                                    {"• "+cat} 
+                                                    {cat} 
                                                 </Link>
                                             </li>
         ));

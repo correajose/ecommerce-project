@@ -36,9 +36,9 @@ const ItemList = ( {category} ) => {
     }, [catId]);
 
     return (
-            loading ?
-            <Loader/>
-            : productsData
+                loading ?
+                <Loader/>
+                : productsData
         )
 };
 

@@ -33,3 +33,11 @@
     width: 20px;
     height: 20px;
 }
+
+.addedItemBox a:link {
+    color: inherit;
+}
+
+.addedItemBox a:visited {
+    color: inherit;
+}

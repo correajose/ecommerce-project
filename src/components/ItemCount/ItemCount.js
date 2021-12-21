@@ -1,6 +1,6 @@
 import "./ItemCount.css";
 
-const ItemCount = ( { maxStock, setAmount, amount } ) => {
+const ItemCount = ( { maxStock, setAmount, amount} ) => {
 
     const handleSub = () => {
         amount > 1 && setAmount(amount-1)
@@ -11,10 +11,10 @@ const ItemCount = ( { maxStock, setAmount, amount } ) => {
     };
 
     return (
-        <span className="itemCountBox">
-            <button onClick={handleSub}> - </button>
-            <p>{amount}</p>
-            <button onClick={handleSum}> + </button>
+        <span className={"itemCountBox container-row hierarchy-3"}>
+            <button className="btn btn-sqz" onClick={handleSub}> - </button>
+            <p className="count">{amount}</p>
+            <button className="btn btn-sqz" onClick={handleSum}> + </button>
         </span>
     )
 

@@ -1,13 +1,10 @@
 .itemCountBox {
-    height: 20px;
-    margin: 10px 0;
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
+    height: 2rem;
+    margin: 1rem 0;
+    gap: 1rem;
 }
 
-button, p {
-    display: inline-block;
-    height: min-content;
+.count {
+    width: 2rem;
+    text-align: center;
 }

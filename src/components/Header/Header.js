@@ -1,14 +1,15 @@
 import "./Header.css";
-import logo from '../../img/logo700.png';
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
 const Header = () => {
 
     return (
-        <header className="App-header">
-          <span id="logoContainer"><Link to="/"><img src={logo} id="App-logo" alt="logo" /></Link></span>
-          <CartWidget w="30px" h="30px"/>
+        <header className="App-header container-row layout-element">
+          <span id="logoContainer" className="container-row hierarchy-1">
+            <Link to="/"> DECO SHOP </Link>
+          </span>
+          <CartWidget w="30px" h="30px" r="2rem" t="0"/>
         </header>
     )
 
