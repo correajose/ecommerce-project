@@ -1,0 +1,8 @@
+.contactViewBox {
+    grid-area: main;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+}

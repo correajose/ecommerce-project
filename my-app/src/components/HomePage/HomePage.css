@@ -1,0 +1,13 @@
+.homePageBox {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.itemListHomeBox {
+    width: 100vw;
+    height: 20rem;
+    overflow-y: scroll;
+}

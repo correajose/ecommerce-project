@@ -1,0 +1,11 @@
+.checkOutCompleteViewBox {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px;
+}
+
+#back2HomeButton {
+    margin: 10px 0;
+}

@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: 'Overpass', sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  --second-color: rgb(51, 51, 51);
+  --third-color: rgb(119, 119, 119);
+}
+
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

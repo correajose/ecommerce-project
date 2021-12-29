@@ -1,0 +1,20 @@
+.cartWidget {
+    position: relative;
+}
+
+.itemsInCartLabel {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 2rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    padding: .1rem;
+    color: black;
+    background-color: var(--third-color);
+    font-size: 1.6rem;
+    font-weight: 800;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,10 @@
+.itemCountBox {
+    height: 2rem;
+    margin: 1rem 0;
+    gap: 1rem;
+}
+
+.count {
+    width: 2rem;
+    text-align: center;
+}

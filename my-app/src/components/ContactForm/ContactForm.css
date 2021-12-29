@@ -1,0 +1,27 @@
+.contactForm {
+    padding: 3rem 5rem;
+}
+
+.contactForm input {
+    margin: .8rem 0;
+}
+
+.checkBox {
+    justify-content: flex-start;
+    margin: .5rem 0;
+}
+
+.subjectSelector {
+    cursor: pointer;
+}
+
+.bodyMessage {
+    display: inline-block;
+    width: 50rem !important;
+    height: 20rem;
+    resize: none;
+}
+
+.contactFormBtns button{
+    margin: 0 .5rem;
+}

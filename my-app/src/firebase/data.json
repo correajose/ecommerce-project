@@ -1,0 +1,65 @@
+{ 
+    "1": {
+        "name": "silla",
+        "price": 7000,
+        "picURL": "https://via.placeholder.com/200",
+        "desc": "Esto es una silla muy cómoda.",
+        "qtty": 0,
+        "category": "muebles"},
+
+    "2": {
+        "name": "lámpara",
+        "price": 4000,
+        "picURL": "https://via.placeholder.com/200",
+        "desc": "Esto es una lámpara muy luminosa.",
+        "qtty": 12,
+        "category": "iluminacion"},
+
+    "3": {
+        "name": "florero",
+        "price": 1800,
+        "picURL": "https://via.placeholder.com/200",
+        "desc": "Esto es un florero muy bonito.",
+        "qtty": 11,
+        "category": "decoracion"},
+
+    "4": {
+        "name": "alfombra",
+        "price": 9300,
+        "picURL": "https://via.placeholder.com/200",
+        "desc": "Esto es una alfombra muy suave.",
+        "qtty": 6,
+        "category": "decoracion"},
+
+    "5": {
+        "name": "espejo",
+        "price": 3500,
+        "picURL": "https://via.placeholder.com/200",
+        "desc": "Esto es un espejo muy honesto.",
+        "qtty": 6,
+        "category": "decoracion"},
+
+    "6": {
+        "name": "mesa ratona",
+        "price": 11000,
+        "picURL": "https://via.placeholder.com/200",
+        "desc": "Esta mesa es muy útil.",
+        "qtty": 3,
+        "category": "muebles"},
+
+    "7": {
+        "name": "velador",
+        "price": 8500,
+        "picURL": "https://via.placeholder.com/200",
+        "desc": "Este es un muy hermoso no así tan luminoso velador.",
+        "qtty": 7,
+        "category": "iluminacion"},
+
+    "8": {
+        "name": "canasto",
+        "price": 2300,
+        "picURL": "https://via.placeholder.com/200",
+        "desc": "Canasto organizador de 30x40x25cm. Organiza tu vida y mucho más con estos canastos.",
+        "qtty": 19,
+        "category": "organizadores"}
+}

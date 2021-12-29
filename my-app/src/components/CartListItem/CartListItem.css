@@ -1,0 +1,48 @@
+.addedItemBox {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 1rem 3rem;
+    margin: .5rem 0;
+}
+
+.addedItemDetailsBox {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 1rem;
+}
+
+.itemPic {
+    width: 10rem;
+    height: 10rem;
+    margin: .5rem;
+}
+
+#removeItemBtn {
+    background-color: black;
+    color: whitesmoke;
+    border: none;
+    border-radius: .2rem;
+    margin-top: .5rem;
+    margin-left: 10rem;
+    text-align: center;
+    width: 1.5rem;
+    height: 1.7rem;
+}
+
+#trashCanBtn img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.addedItemBox a:link {
+    color: inherit;
+}
+
+.addedItemBox a:visited {
+    color: inherit;
+}

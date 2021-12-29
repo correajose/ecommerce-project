@@ -1,0 +1,66 @@
+.navBar {
+  border-bottom: inset .2rem var(--third-color);
+  position: sticky;
+  top: 5rem;
+}
+
+.sectionList {
+  gap: 15rem;
+}
+  
+.section-nav {
+  display: inline-block;
+  list-style: none;
+  font-size: 1.6rem;
+}
+
+.dropdown-cat, .dropdown-info {
+  display: flex;
+  flex-flow: column;
+}
+
+.sub-menu {
+  display: block;
+  visibility: collapse;
+  width: 100vw;
+  position: absolute;
+  z-index: -1;
+  top: 2rem;
+  left: 0;
+  list-style: none;
+  font-size: 1.6rem;
+  background-color:  rgba(245, 245, 245, 0.95);
+  padding: 2rem 3rem 2rem 2rem;
+  transition: opacity 200ms;
+  opacity: 0;
+  border-radius: .1rem;
+  box-shadow: .5rem .5rem .5rem rgba(124, 124, 124, 0.158);
+}
+
+.sub-menu li {
+  padding: 1rem 0;
+}
+
+.sub-menu li a {
+  display: inline-block;
+  width: 100%;
+}
+
+.sub-menu li:hover {
+  background: linear-gradient(0, rgba(245, 245, 245, 0.10) 0%, rgb(240, 240, 240) 50%, rgba(245, 245, 245, 0.1) 100%);
+}
+
+.dropdown-cat .sub-menu li:first-child {
+  font-weight: 500;
+}
+
+.dropdown-cat:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-info:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  text-align: end;
+}
